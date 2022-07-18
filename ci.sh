@@ -25,4 +25,4 @@ cd ../../../
 mkdir build || exit
 cd build || exit
 cmake ..
-MSBuild.exe UntitledTextGenerator.sln -property:Configuration=Release -property:Platform=x64 -property:maxCpuCount="${cpus}" || make -j "${cpus}" || exit
+MSBuild.exe UntitledTextEditor.sln -property:Configuration=Release -property:Platform=x64 -property:maxCpuCount="${cpus}" || make -j "${cpus}" || exit
