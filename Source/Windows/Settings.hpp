@@ -1,0 +1,18 @@
+#pragma once
+#include <Framework.hpp>
+
+namespace UntitledTextEditor
+{
+    class UIMGUI_PUBLIC_API Settings : public UImGui::WindowComponent
+    {
+    public:
+        Settings();
+        virtual void begin() override;
+        virtual void tick(float deltaTime) override;
+        virtual void end() override;
+        virtual ~Settings() override;
+    private:
+
+    };
+}
+

@@ -2,7 +2,8 @@
 
 UntitledTextEditor::Instance::Instance()
 {
-
+    initInfo.windowComponents = { &about, &exit, &open, &save, &filesystem, &hexEditor, &settings, &tabTemplate, &terminal };
+    initInfo.titlebarComponents = { &mainBar };
 }
 
 void UntitledTextEditor::Instance::begin()
@@ -32,4 +33,3 @@ void UntitledTextEditor::Instance::onEventConfigureStyle(ImGuiStyle& style, ImGu
 {
 
 }
-

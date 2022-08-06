@@ -1,5 +1,8 @@
 #pragma once
 #include <Framework.hpp>
+#include <Prompts/Prompts.hpp>
+#include <Windows/Windows.hpp>
+#include "MainBar.hpp"
 
 namespace UntitledTextEditor
 {
@@ -14,7 +17,18 @@ namespace UntitledTextEditor
 
         virtual void onEventConfigureStyle(ImGuiStyle& style, ImGuiIO& io) override;
     private:
+        About about{};
+        Exit exit{};
+        Open open{};
+        Save save{};
 
+        Filesystem filesystem{};
+        HexEditor hexEditor{};
+        Settings settings{};
+        TabTemplate tabTemplate{};
+        Terminal terminal{};
+
+        MainBar mainBar{};
     };
 }
 
