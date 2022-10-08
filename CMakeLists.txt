@@ -47,12 +47,14 @@ link_directories(UVKBuildTool/build)
 file(GLOB_RECURSE UGUI_SRC "Framework/Core/*.cpp" "Framework/Renderer/*.cpp"
         "Framework/ThirdParty/imgui/backends/everything/*.cpp" "Framework/ThirdParty/imgui/misc/cpp/*.cpp"
         "Framework/ThirdParty/logger/*.cpp" "Framework/ThirdParty/source-libraries/*.cpp"
-        "Framework/Modules/Audio/src/*.cpp" "Framework/Modules/Locale/src/*.cpp" "Source/*.cpp")
+        "Framework/Modules/Audio/src/*.cpp" "Framework/Modules/Locale/src/*.cpp" "Source/*.cpp"
+        "Framework/Modules/Undo/src/*.cpp" "Framework/Modules/Manager/*.cpp")
 file(GLOB_RECURSE UGUI_HEAD "Framework/Core/*.hpp" "Framework/Renderer/*.hpp"
         "Framework/ThirdParty/imgui/backends/everything/*.h" "Framework/ThirdParty/imgui/misc/cpp/*.h"
         "Framework/ThirdParty/logger/*.h" "Framework/ThirdParty/source-libraries/*.h"
         "Framework/ThirdParty/source-libraries/*.hpp" "Framework/Modules/Audio/src/*.hpp"
-        "Framework/Modules/Locale/src/*.hpp" "Source/*.hpp")
+        "Framework/Modules/Locale/src/*.hpp" "Source/*.hpp" "Framework/Modules/Undo/src/*.hpp"
+        "Framework/Modules/Manager/*.hpp")
 file(GLOB_RECURSE EXEC_SRC "Framework/ThirdParty/logger/*.cpp")
 
 if (USE_PLOTTING_MODULE)
@@ -83,6 +85,12 @@ if (USE_PLOTTING_MODULE)
     target_compile_definitions(UntitledImGuiFramework PRIVATE "UIMGUI_PLOTTING_MODULE_ENABLED")
     target_compile_definitions(UntitledTextEditor PRIVATE "UIMGUI_PLOTTING_MODULE_ENABLED")
 endif()
+
+if (USE_UNDO_MODULE)
+    target_compile_definitions(UntitledImGuiFramework PRIVATE "UIMGUI_UNDO_MODULE_ENABLED")
+    target_compile_definitions(UntitledTextEditor PRIVATE "UIMGUI_UNDO_MODULE_ENABLED")
+endif()
+
 target_compile_definitions(UntitledImGuiFramework PRIVATE "UIMGUI_COMPILE_LIB" "YAML_CPP_DLL")
 
 if (WIN32)
