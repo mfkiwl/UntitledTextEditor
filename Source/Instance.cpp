@@ -1,4 +1,5 @@
 #include "Instance.hpp"
+#include <Modules/Modules.hpp>
 
 UntitledTextEditor::Instance::Instance()
 {
@@ -9,7 +10,6 @@ UntitledTextEditor::Instance::Instance()
 void UntitledTextEditor::Instance::begin()
 {
     beginAutohandle();
-
 }
 
 void UntitledTextEditor::Instance::tick(float deltaTime)
